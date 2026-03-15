@@ -168,4 +168,58 @@ If the VM still boots into the live environment again, tell me. The ISO is still
 
 You break something. the vm can't start normally?! also your answer make it separate by line of **** so I can know the answer in scratch pad
 
-I started the virtual box and started the M what I got I. Collected try install but I got the black window. 
+Lately, I’ve been spending more time working with 𝗖𝗼𝗱𝗲𝘅 𝟱.𝟰, and I’ve had a few moments that genuinely made me stop and smile.
+
+What keeps surprising me is not just that it can write code, but how naturally it uses 𝗖𝗟𝗜𝘀 𝗮𝗻𝗱 𝘀𝗰𝗿𝗶𝗽𝘁𝘀. Sometimes, when it needs a tool, it creates one on the fly instead of waiting for me to tell it exactly what to do.
+
+One example was testing. I asked the agent to enforce the 𝗚𝗶𝘃𝗲𝗻–𝗪𝗵𝗲𝗻–𝗧𝗵𝗲𝗻 style for tests. I expected it to update the instructions. Instead, it created a check that fails when a new test does not follow the rule. It didn’t just record the rule somewhere. 𝗜𝘁 𝗳𝗼𝘂𝗻𝗱 𝗮 𝘄𝗮𝘆 𝘁𝗼 𝗲𝗻𝗳𝗼𝗿𝗰𝗲 𝗶𝘁.
+
+I saw the same thing with architecture rules. I asked it to prevent 𝗹𝗮𝘆𝗲𝗿 𝗹𝗲𝗮𝗸𝗮𝗴𝗲, so services would not call layers they should not depend on. Again, I expected a rule in the docs. Instead, it created a lint check that runs on every change and catches violations automatically.
+
+Another moment came when I asked it to set up the 𝗝𝗶𝗿𝗮 𝗠𝗖𝗣 𝘀𝗲𝗿𝘃𝗲𝗿. It configured the setup and asked me to authenticate. While verifying the connection, it realized VS Code would normally require a reload. Instead of stopping there and sending the problem back to me, it ran the Codex CLI from the terminal and verified the integration that way.
+
+Recently, I also started treating the end of each session like a 𝘀𝗺𝗮𝗹𝗹 𝗽𝗼𝘀𝘁𝗺𝗼𝗿𝘁𝗲𝗺 𝘄𝗶𝘁𝗵 𝘁𝗵𝗲 𝗮𝗴𝗲𝗻𝘁. I review the work, give feedback, ask what we learned, and use that reflection to improve how we work together.
+
+More and more, I find myself treating agents less like tools and more like 𝘁𝗲𝗮𝗺𝗺𝗮𝘁𝗲𝘀. I still review the work carefully, but I also rely on them to suggest solutions, apply rules, and sometimes find better ways forward than the one I had in mind.
+
+It still feels early, but this style of 𝗮𝗴𝗲𝗻𝘁𝗶𝗰 𝗱𝗲𝘃𝗲𝗹𝗼𝗽𝗺𝗲𝗻𝘁 is becoming a very interesting way to build software.
+
+𝗖𝘂𝗿𝗶𝗼𝘂𝘀 𝘁𝗼 𝗵𝗲𝗮𝗿 𝗵𝗼𝘄 𝗼𝘁𝗵𝗲𝗿𝘀 𝗮𝗿𝗲 𝗲𝘅𝗽𝗲𝗿𝗶𝗺𝗲𝗻𝘁𝗶𝗻𝗴 𝘄𝗶𝘁𝗵 𝗮𝗴𝗲𝗻𝘁 𝘄𝗼𝗿𝗸𝗳𝗹𝗼𝘄𝘀.
+
+Written with the help of an AI agent.
+
+I have been working with another agent, Shajib Tea, to think about a product and it was playing is the role of a system analyst and I asked it in the end to give me a shelter for the agent who will work on the project and level with me. It will be you. So I would like you to look at the inscription given by the shared. And see how you can update the scale and the Asian if needed. To reflect that in the agent you will. You will play. In the project. 
+
+****
+
+I think the system analyst proposal is strong.
+
+****
+
+What is strong:
+
+- It gives the agent a clear identity and rejects the wrong ones.
+- It anchors the agent to the real current phase of AutoV60.
+- The in-scope vs out-of-scope split is strong and practical.
+- The writing rules and quality checks push toward buildable docs instead of impressive-looking fluff.
+
+****
+
+What I would tighten:
+
+- Add decision ownership explicitly. The analyst frames and proposes, but the user confirms final scope decisions.
+- Add update behavior. Define when the agent should update an existing document versus create a new one.
+- Add a default response mode. Short answer first, full docs only when requested or clearly needed.
+- Add a precedence rule for conflicts between repo docs and the latest user instruction.
+
+****
+
+Main risk:
+
+The proposal is intentionally tuned to the current v1 phase. That is good now, but later phases may need an explicit rule saying the phase can be redefined when the user changes direction.
+
+****
+
+Overall:
+
+It is a good charter and worth using. It gives the agent enough discipline to be useful without making it too vague.

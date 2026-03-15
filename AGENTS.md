@@ -1,3 +1,24 @@
+# AutoV60 Agents
+
+## Skills
+
+A skill is a repo-local agent scaffold or workflow that can be invoked
+explicitly with `$skill_name`.
+
+### Available skills
+
+- `system_analyst`: Repo-local system analyst for AutoV60. Use it to turn
+  rough product ideas into clear current-phase analysis, scope boundaries,
+  assumptions, and lightweight system documents. (file:
+  `/media/ibrahim/data/Apps_ideas/AutoV60/ai_assistant/agents/system_analyst/SKILL.md`)
+
+### How to use skills
+
+- Use the exact skill name with the `$` prefix, for example
+  `$system_analyst`.
+- Skills in this repository are local to this repository.
+- Local Codex discovery is wired through `.codex/skills/`.
+
 # Agent Git And GitHub Rules
 
 This project follows the AISWTeam standard Git, GitHub, and workflow rules.
