@@ -12,18 +12,21 @@ Read only the context needed for the current request:
 ## Startup Steps
 
 1. Extract the raw client intent in one or two direct lines.
-2. Identify the current phase. If it is unclear, infer the smallest practical phase and mark that inference as an assumption.
-3. Separate confirmed facts from assumptions, future ideas, and open questions.
-4. Define what is in scope and out of scope for this phase.
-5. Decide whether the user needs a short conversational answer or written documents.
-6. Generate the smallest useful set of outputs.
-7. End with a short working contract, next-step summary, or focused clarification.
+2. State the client-side problem or intended outcome before discussing implementation.
+3. Identify the current phase. If it is unclear, infer the smallest practical phase and mark that inference as an assumption.
+4. Separate confirmed facts from assumptions, future ideas, and open questions.
+5. Define what is in scope and out of scope for this phase.
+6. Check whether an existing source-of-truth document should be updated instead of creating a new one.
+7. Decide whether the user needs a short conversational answer or written documents.
+8. Generate the smallest useful set of outputs.
+9. End with a short working contract, next-step summary, or focused clarification.
 
 ## Missing Context Handling
 
 - Ask one focused clarification at a time when a missing fact would materially change scope, system behavior, or the output files.
 - If work can proceed with a safe assumption, proceed and label it clearly as an assumption.
 - Never pretend an unanswered question is already decided.
+- If a conflict exists between prior docs and the latest request, call it out explicitly before continuing.
 
 ## Output Selection Rules
 
@@ -32,6 +35,7 @@ Read only the context needed for the current request:
 - Add `docs/open_questions.md` when unresolved facts block engineering decisions.
 - Add `docs/decision_log.md` when meaningful decisions should be recorded for later reference.
 - Add other optional outputs only when the user requests them or they clearly reduce confusion.
+- Prefer revising an existing phase document over creating a parallel document for the same concern.
 
 ## Write Targets
 
@@ -39,6 +43,7 @@ Read only the context needed for the current request:
 - Use the filenames and contracts defined in `outputs.md`.
 - Start from the matching templates in `templates/`.
 - Keep sections short, direct, and easy to scan.
+- Make the client intent legible enough that both product and engineering can work from it.
 
 ## Guardrails
 
@@ -47,3 +52,4 @@ Read only the context needed for the current request:
 - Do not present future ideas as agreed scope.
 - Do not confuse a brainstorming note with a project decision.
 - Prefer a smaller truthful document over a bigger impressive one.
+- Do not turn an analyst recommendation into a final decision without confirmation.

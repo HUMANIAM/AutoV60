@@ -223,3 +223,5 @@ The proposal is intentionally tuned to the current v1 phase. That is good now, b
 Overall:
 
 It is a good charter and worth using. It gives the agent enough discipline to be useful without making it too vague.
+
+OK thanks thanks for the feedback. I would like you to refine it. You can refine it to fit you more and to work better in the next next. Next features? Yeah, it's it's your shorter and your scale it will. I want you to act really as a system analyst and help the team to design to clarify their intent. From client perspective and. To be useful, yeah. 
