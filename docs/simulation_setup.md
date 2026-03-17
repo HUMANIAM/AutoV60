@@ -12,6 +12,36 @@ The goal is to validate the control loop before wiring the real hardware:
 
 The setup is intentionally simple and suitable for a weak laptop.
 
+## VM / dev environment prerequisites (CLI)
+
+This repo is typically developed **inside an Ubuntu 24 VM** (with the host connecting via VS Code Remote SSH).
+
+- Full VM provisioning runbook: `docs/vm_ubuntu_24_dev_env_setup.md`
+- Minimal guest requirements for *simulation only*:
+  - Python 3 + `venv`
+  - Git (to clone/open the repo)
+
+In the **Ubuntu 24 guest**, run:
+
+```bash
+sudo apt update
+sudo apt install -y python3 python3-venv python3-pip git
+```
+
+In the repo root (inside the guest):
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+```
+
+Then you can run your simulator script (once it exists under `simulation/`), for example:
+
+```bash
+python simulation/flow_simulator.py
+```
+
 ## Simulation Strategy
 
 Use two small layers instead of one heavy simulator:
