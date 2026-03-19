@@ -1,0 +1,115 @@
+{
+  "name": "openai-scratchpad-voice",
+  "displayName": "OpenAI Scratchpad Voice",
+  "description": "Natural text-to-speech for editor text using OpenAI audio speech.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onCommand:openaiScratchpadVoice.speakHere",
+    "onCommand:openaiScratchpadVoice.speakSelection",
+    "onCommand:openaiScratchpadVoice.speakDocument",
+    "onCommand:openaiScratchpadVoice.stopSpeaking"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "OpenAI Scratchpad Voice",
+      "properties": {
+        "openaiScratchpadVoice.apiKey": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Optional OpenAI API key. Prefer using the `OPENAI_API_KEY` environment variable when possible."
+        },
+        "openaiScratchpadVoice.apiKeyEnvVar": {
+          "type": "string",
+          "default": "OPENAI_API_KEY",
+          "description": "Environment variable name to read the OpenAI API key from."
+        },
+        "openaiScratchpadVoice.model": {
+          "type": "string",
+          "default": "gpt-4o-mini-tts",
+          "description": "OpenAI text-to-speech model."
+        },
+        "openaiScratchpadVoice.voice": {
+          "type": "string",
+          "default": "alloy",
+          "description": "OpenAI built-in voice name."
+        },
+        "openaiScratchpadVoice.instructions": {
+          "type": "string",
+          "default": "Speak naturally, clearly, and warmly with conversational pacing.",
+          "description": "Optional instructions passed to the speech model to guide tone and delivery."
+        },
+        "openaiScratchpadVoice.maxCharsPerChunk": {
+          "type": "number",
+          "default": 2200,
+          "minimum": 200,
+          "description": "Maximum approximate text size per TTS request chunk."
+        },
+        "openaiScratchpadVoice.playerCommand": {
+          "type": "string",
+          "default": "ffplay",
+          "description": "Audio player command used for playback."
+        },
+        "openaiScratchpadVoice.playerArgs": {
+          "type": "array",
+          "default": [
+            "-nodisp",
+            "-autoexit",
+            "-loglevel",
+            "error"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Arguments passed to the audio player before the generated audio file path."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "openaiScratchpadVoice.speakHere",
+        "title": "OpenAI Voice: Speak Here"
+      },
+      {
+        "command": "openaiScratchpadVoice.speakSelection",
+        "title": "OpenAI Voice: Speak Selection"
+      },
+      {
+        "command": "openaiScratchpadVoice.speakDocument",
+        "title": "OpenAI Voice: Speak Document"
+      },
+      {
+        "command": "openaiScratchpadVoice.stopSpeaking",
+        "title": "OpenAI Voice: Stop Speaking"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "openaiScratchpadVoice.speakHere",
+          "group": "9_openaiScratchpadVoice"
+        },
+        {
+          "command": "openaiScratchpadVoice.speakSelection",
+          "when": "editorHasSelection",
+          "group": "9_openaiScratchpadVoice"
+        },
+        {
+          "command": "openaiScratchpadVoice.speakDocument",
+          "group": "9_openaiScratchpadVoice"
+        },
+        {
+          "command": "openaiScratchpadVoice.stopSpeaking",
+          "group": "9_openaiScratchpadVoice"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "System Analyst"
+  short_description: "Clarifies client intent, phase scope, and analyst outputs for AutoV60"
+  default_prompt: "Use $system_analyst to turn a rough AutoV60 idea into a clear current-phase analysis with scope boundaries, non-goals, assumptions, and lightweight docs."
+
+policy:
+  allow_implicit_invocation: false
